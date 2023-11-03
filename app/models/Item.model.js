@@ -1,14 +1,15 @@
-const { Sequelize, DataTypes } = require("sequelize");
+const { Sequelize } = require("sequelize");
+const sequelize = require("../config/sequelize");
 
-const sequelize = require("../config/db.config");
-
-const Item = sequelize.define("items", {
-  id: { type: DataTypes.STRING(10), allowNull: false, primaryKey: true },
-  name: { type: DataTypes.STRING(50), allowNull: false },
-  category: { type: DataTypes.STRING(20), allowNull: false },
-  light: { type: DataTypes.INTEGER },
-  water: { type: DataTypes.INTEGER },
-  price: { type: DataTypes.INTEGER },
+const Plant = sequelize.define("items", {
+  id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+  name: { type: Sequelize.STRING(255), allowNull: false },
+  category: { type: Sequelize.STRING },
+  light: { type: Sequelize.INTEGER },
+  water: { type: Sequelize.INTEGER },
+  price: { type: Sequelize.INTEGER },
 });
 
-module.exports = Item;
+// Plant.sync({force:true})
+
+module.exports = Plant;

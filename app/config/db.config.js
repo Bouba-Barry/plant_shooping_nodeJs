@@ -1,14 +1,14 @@
-const { Sequelize } = require("sequelize");
-
-const DATABASE = "plant_shooping_db";
-const USER = "bouba";
-const PASSWORD = "bouba";
-const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
-  host: process.env.HOST || "localhost",
-  dialect: "mysql",
-  define: {
-    freezeTableName: true,
+module.exports = {
+  database: "plant_shooping_db",
+  username: "root",
+  password: "",
+  host: "localhost",
+  dbType: "mysql",
+  dbPool: {
+    max: 5,
+    min: 0,
+    idle: 10000,
   },
-});
-
-module.exports = sequelize;
+  corsOptions: { origin: "http://localhost:3000" },
+  PORT: 8081,
+};

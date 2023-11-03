@@ -1,7 +1,7 @@
-const Item = require("../models/Item.model");
+const Plant = require("../models/Item.model");
 
 exports.findAllItems = (req, res) => {
-  Item.findAll()
+  Plant.findAll()
     .then((data) => {
       console.log("controller : ", data);
       return res.send(data);
