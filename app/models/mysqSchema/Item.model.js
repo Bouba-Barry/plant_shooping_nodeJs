@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
-const sequelize = require("../config/sequelize");
+const sequelize = require("../../config/sequelize");
 
-const Plant = sequelize.define("items", {
+const Item = sequelize.define("items", {
   id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
   name: { type: Sequelize.STRING(255), allowNull: false },
   category: { type: Sequelize.STRING },
@@ -12,4 +12,4 @@ const Plant = sequelize.define("items", {
 
 // Plant.sync({force:true})
 
-module.exports = Plant;
+module.exports = Item;
