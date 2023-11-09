@@ -11,6 +11,7 @@ router.post("/items", itemController.createItem);
 // for user ....
 router.post("/users", userController.saveUser);
 router.get("/users", userController.saveUser);
+router.post("/users/auth", userController.findUserByCredentials);
 
 // for order .....
 router.post("/order", orderController.createOrder);
