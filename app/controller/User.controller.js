@@ -23,7 +23,7 @@ exports.findAllUser = async (req, res) => {
 
 exports.findUserByCredentials = async (req, res) => {
   try {
-    console.log("user :  ", req.body);
+    console.log("user sended is :  ", req.body);
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       if (user.password === req.body.password) {
