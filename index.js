@@ -3,6 +3,8 @@ require("dotenv").config();
 const app = express();
 const cors = require("cors");
 const item_router = require("./app/routes/items.routes");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -10,6 +12,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
+app.use(cookieParser());
+app.use(bodyParser.json());
 
 app.use(express.urlencoded({ extended: true }));
 
