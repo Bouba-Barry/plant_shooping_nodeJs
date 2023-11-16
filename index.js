@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   res.json({ message: "welcome to my application" });
 });
 
-app.use("/", auth_router);
+app.use("/api", auth_router);
 app.use("/api", app_router);
 
 const PORT = process.env.PORT || 8081;
