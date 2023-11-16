@@ -2,7 +2,8 @@ const express = require("express");
 require("dotenv").config();
 const app = express();
 const cors = require("cors");
-const item_router = require("./app/routes/items.routes");
+const app_router = require("./app/routes/app.routes");
+const auth_router = require("./app/routes/auth.routes");
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -17,7 +18,8 @@ app.get("/", (req, res) => {
   res.json({ message: "welcome to my application" });
 });
 
-app.use("/api", item_router);
+app.use("/", auth_router);
+app.use("/api", app_router);
 
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
